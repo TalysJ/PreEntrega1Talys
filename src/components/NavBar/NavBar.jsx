@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import { NavLink } from 'react-router-dom';
 
 
 function NavBar() {
@@ -9,17 +11,16 @@ function NavBar() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Renaissance Vending <CartWidget/></Navbar.Brand>
+          <Navbar.Brand to= '/'>Renaissance Vending <CartWidget/></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#features">Productos</Nav.Link>
-            <Nav.Link href="#features">Nosotros</Nav.Link>
-            <Nav.Link href="#pricing">Contacto</Nav.Link>
+            <Nav.Link to='/'>Inicio</Nav.Link>
+            <Nav.Link to='/category/snack'>Maquinas de Snack</Nav.Link>
+            <Nav.Link to='/category/coffe'>Maquinas de Cafe</Nav.Link>
+            <Nav.Link to='/supplies'>Insumos</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      <br />
-      <br />
+      <ItemDetailContainer/>
     </>
   );
 }

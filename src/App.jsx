@@ -1,21 +1,28 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
+import Item from './components/Item/Item';
+import ItemList from './components/ItemList/ItemList';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import CategoryButton from './components/NavBar/CategoryButton/CategoryButton';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartWidget from './components/NavBar/CartWidget/CartWidget';
-import Title from './components/Title/Title';
-import React from 'react';
+
 
 function App() {
 
-  return (  
+  return (
     <>
-      <NavBar/>
-      <CategoryButton/>
-      <ItemListContainer/>
-      <Title/>
+    <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoryId' element={<ItemList/>}/>
+          <Route path='/cart' element={<CartWidget/>}/>
+        </Routes>
+    </BrowserRouter>
     </>
   );
 }
 
-export default App;
+export default App

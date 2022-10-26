@@ -1,0 +1,39 @@
+.container {
+    width: 98%;
+    margin: 0;
+    background-color: chocolate;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.detail {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: chocolate;    
+}
+
+.detail__image {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .detail__image {
+        width: 50%;
+    }
+    
+    .content {
+        width: 50%;
+        padding-left: 0rem;
+    }
+}

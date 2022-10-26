@@ -1,8 +1,22 @@
-.slogan {
+.machines {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    background-color: burlywood;
+    background-color:moccasin;
   }
+
+  .greetings {
+    justify-content: center;
+    background-color: chocolate;
+    align-items: center;
+    justify-items: center;
+}
+
+.slogan {
+  display: inline;
+  justify-content: center;
+  align-content: center;
+  background-color: chocolate;
+}
