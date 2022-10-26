@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import Title from '../Title/Title';
 import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-// import Item from '../Item/Item';
 import { useParams } from 'react-router-dom';
 
 const machines = [
@@ -26,33 +25,31 @@ const machines = [
   title: "SL1000", price: 1000},
 ];
 
+const Presentation = () => {
+  return (      
+    <div className='slogan'>
+      <Card>
+            <Card.Header className='blockquote mb-0 text-center bg-dark text-light'>Renaissance Vending</Card.Header>
+            <Card.Body>
+              <blockquote className="blockquote mb-0 text-center bg-dark text-light">
+                <p>
+                  {' '}
+                  El futuro ya esta aqui...{' '}
+                </p>
+                <footer className="blockquote-footer">
+                  <cite title="Source Title">Y son las vending machines!</cite>
+                </footer>
+              </blockquote>
+            </Card.Body>
+          </Card>
+    </div>
+);
+}
 
 export const ItemListContainer = ({texto}) => {
 
-  const Presentation = () => {
-    return (      
-      <div className='slogan'>
-        <Card>
-              <Card.Header className='blockquote mb-0 text-center bg-dark text-light'>Renaissance Vending</Card.Header>
-              <Card.Body>
-                <blockquote className="blockquote mb-0 text-center bg-dark text-light">
-                  <p>
-                    {' '}
-                    El futuro ya esta aqui...{' '}
-                  </p>
-                  <footer className="blockquote-footer">
-                    <cite title="Source Title">Y son las vending machines!</cite>
-                  </footer>
-                </blockquote>
-              </Card.Body>
-            </Card>
-      </div>
-  );
-
-  }
-
   const [data, setData] = useState([]);
-
+  console.log(data)
   const {categoryId} = useParams();
 
   useEffect(() => {
@@ -81,7 +78,7 @@ return (
       <Presentation/>
        <Title greeting= {texto} />
        <ItemCount initial = {1} stock = {20} onAdd={onAdd}/>
-       <ItemList data={data}/>
+       <ItemList categoryId={categoryId}  data={data}/>
     </p>
 );
 }

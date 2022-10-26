@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 
@@ -8,6 +9,9 @@ const intro = {id: 1, image: "https://www.masterlogistica.es/wp-content/uploads/
 export const ItemDetailContainer = () => {
 
     const [data, setData] = useState({});
+    // const {productId} = useParams()
+
+
 
     useEffect(() => {
         const getData = new Promise(resolve => {

@@ -1,9 +1,10 @@
+import "./NavBar.css"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 function NavBar() {
@@ -13,10 +14,10 @@ function NavBar() {
         <Container>
           <Navbar.Brand to= '/'>Renaissance Vending <CartWidget/></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link to='/'>Inicio</Nav.Link>
-            <Nav.Link to='/category/snack'>Maquinas de Snack</Nav.Link>
-            <Nav.Link to='/category/coffe'>Maquinas de Cafe</Nav.Link>
-            <Nav.Link to='/supplies'>Insumos</Nav.Link>
+            <NavLink className="nav__link" to='/'>Inicio</NavLink>
+            <NavLink className="nav__link" to='/category/snack'>Maquinas de Snack</NavLink>
+            <NavLink className="nav__link" to='/category/coffe'>Maquinas de Cafe</NavLink>
+            <NavLink className="nav__link" to='/supplies'>Insumos</NavLink>
           </Nav>
         </Container>
       </Navbar>

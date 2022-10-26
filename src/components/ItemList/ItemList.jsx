@@ -1,10 +1,20 @@
 import Item from "../Item/Item";
-import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import React from "react";
+import { useParams } from "react-router-dom";
 
-const ItemList = ({data = []}) => {
+
+const ItemList = ({data}) => {
+    
+    const {categoryId} = useParams()
+    
     return(
-        data.map(machines => <Item key={machines.id} info={machines} />)
+        
+        categoryId ?
+        data
+        .filter((machines => machines.category === categoryId))
+        .map(machines => <Item key={machines.id} info={machines} />)
+        :data
+        .map(machines => <Item key={machines.id} info={machines}/>)
     );
 }
 
