@@ -1,9 +1,9 @@
 import './Title.css'
 import React from "react";
-import ItemListContainer from "../ItemListContainer/ItemListContainer";
-import Card from "react-bootstrap/Card";
-import ItemCount from "../ItemCount/ItemCount";
-import BodyContent from "../BodyContent/BodyContent";
+// import ItemListContainer from "../ItemListContainer/ItemListContainer";
+// import Card from "react-bootstrap/Card";
+// import ItemCount from "../ItemCount/ItemCount";
+// import BodyContent from "../BodyContent/BodyContent";
 
 export const Title = ({texto}) => {
 

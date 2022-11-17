@@ -2,7 +2,6 @@ import './ItemListContainer.scss';
 import React, { useEffect, useState} from 'react';
 import Card from "react-bootstrap/Card";
 import Title from '../Title/Title';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 
@@ -49,7 +48,7 @@ const Presentation = () => {
 export const ItemListContainer = ({texto}) => {
 
   const [data, setData] = useState([]);
-  console.log(data)
+  // console.log(data)
   const {categoryId} = useParams();
 
   useEffect(() => {
@@ -69,7 +68,7 @@ export const ItemListContainer = ({texto}) => {
   }, [categoryId])
 
   const onAdd = (quantity) => {
-    console.log(`Compraste ${quantity} unidades`);
+    // console.log(`Compraste ${quantity} unidades`);
 }
 
 return (
@@ -77,7 +76,6 @@ return (
     <p>
       <Presentation/>
        <Title greeting= {texto} />
-       <ItemCount initial = {1} stock = {20} onAdd={onAdd}/>
        <ItemList categoryId={categoryId}  data={data}/>
     </p>
 );

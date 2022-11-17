@@ -1,12 +1,10 @@
 import './item.scss'
-import React from 'react'
-import ItemList from '../ItemList/ItemList'
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export const Item = ({info}) => {
-
+    
     return (
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={info.image} />
